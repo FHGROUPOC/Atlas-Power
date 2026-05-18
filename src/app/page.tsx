@@ -19,7 +19,7 @@ import Wrapper from '@/layouts/Wrapper';
 
 
 export const metadata = {
-  title: "Vixan - Digital  Creative Agency Next js Template",  
+  title: "Atlas Power",  
 };
 
 
@@ -32,14 +32,14 @@ const index = () => {
         {/* <MarqueeAreaHomeOne /> */}
         <AboutHomeOne />
         <PortfolioHomeOne />
-        <ServiceHomeOne />
+        {/* <ServiceHomeOne />
         <AwardsHomeOne  style_2={true}/>
         <Testimonial />
         <FunFactHomeOne />
         <VideoHomeOne />
         <BlogHomeOne />
         <SubscribeHomeOne />
-        <BrandHomeOne style_2={false}  />
+        <BrandHomeOne style_2={false}  /> */}
         <FooterOne />
       </div>
     </Wrapper>
