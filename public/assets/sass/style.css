@@ -3384,6 +3384,7 @@ label {
     height: inherit;
     align-items: center;
     text-transform: uppercase;
+    color: #ffffff;
   }
   .cs_nav .cs_nav_list > li > ul {
     left: 0;
@@ -3403,7 +3404,7 @@ label {
     display: inline-block;
     height: 8px;
     width: 8px;
-    border: 2px solid var(--body-color);
+    border: 2px solid #fff;
     transform: rotate(45deg);
     border-left: 0;
     border-top: 0;

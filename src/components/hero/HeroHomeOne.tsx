@@ -1,45 +1,81 @@
-
-'use client'
-import React from 'react';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 
 const hero_slider = [
   {
-    img: `/assets/img/hero_img_1.jpg`,
+    img: `https://sobhaconstructions.com/source/uploads/2024/03/3_20240314_941ea.png`,
     sub_title: "Creative Agency",
     title: "Expert Digital Services for Your Own Business",
-    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`
+    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
   },
   {
-    img: `/assets/img/hero_img_1.jpg`,
+    img: `https://sobhaconstructions.com/source/uploads/2024/03/4_20240314_fa77e.png`,
     sub_title: "Creative Agency",
     title: "Expert Digital Services for Your Own Business",
-    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`
+    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
   },
   {
-    img: `/assets/img/hero_img_1.jpg`,
+    img: `https://sobhaconstructions.com/source/uploads/2023/12/jpeg-optimizer_pic-bnr_20231011_e7c22_20231219_33493.jpg`,
     sub_title: "Creative Agency",
     title: "Expert Digital Services for Your Own Business",
-    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`
+    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
   },
-]
-
+];
 
 const HeroHomeOne = () => {
   return (
     <>
+      <style>
+        {`
+  .cs_hero_bg .cs_bg .cs_parallax_bg{
+    position: relative;
+  }
+.cs_hero.cs_style1 .cs_hero_bg .imgLiquid::before {
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(78, 78, 78, 0) 30%, rgba(130, 130, 130, 0) 70%, rgba(0, 0, 0, 1) 100%);
+  }`}
+      </style>
+
       <Swiper
         loop={true}
         slidesPerView={1}
         autoplay={{ delay: 3000 }}
-        pagination={{ clickable: true }} 
-        className="cs_slider cs_slider_1">
-        {hero_slider.map((item, index) =>
+        pagination={{ clickable: true }}
+        className="cs_slider cs_slider_1"
+      >
+        {hero_slider.map((item, index) => (
           <SwiperSlide key={index} className="swiper-slide">
             <div className="cs_hero cs_style1 cs_center cs_parallax">
-              <div className="cs_hero_bg cs_bg cs_parallax_bg" style={{ backgroundImage: `url(${item.img})` }}></div>
+              <div
+                className="cs_hero_bg cs_bg cs_parallax_bg"
+                style={{ width: "100%" }}
+              >
+                <figure
+                  className="imgLiquid imgLiquid_bgSize imgLiquid_ready"
+                  style={{
+                    backgroundImage: `url(${item.img})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat",
+                    height: "100%",
+                  }}
+                >
+                  <img
+                    src={item.img}
+                    loading="lazy"
+                    alt={item.title || "Portfolio"}
+                    style={{ display: "none" }}
+                  />
+                </figure>
+              </div>
               <div className="container">
                 <div className="cs_hero_text">
                   {/* <div className="cs_hero_mini_title">
@@ -52,15 +88,13 @@ const HeroHomeOne = () => {
                     {item.sub_title}
                   </div> */}
                   <div className="cs_height_20 cs_height_lg_20"></div>
-                  <h1 className="cs_hero_title">
-                    {item.title}
-                  </h1>
+                  <h1 className="cs_hero_title text-white">{item.title}</h1>
                   <div className="cs_height_70 cs_height_lg_60"></div>
                   {/* <div className="cs_hero_text_in">
                     <div className="cs_hero_subtitle">
                       {item.des}
                     </div> */}
-                    {/* <div className="cs_height_65 cs_height_lg_40"></div>
+                  {/* <div className="cs_height_65 cs_height_lg_40"></div>
                     <div className="cs_hero_btn_wrap">
                       <div className="cs_round_btn_wrap">
                         <Link href="/portfolio"
@@ -74,7 +108,7 @@ const HeroHomeOne = () => {
               </div>
             </div>
           </SwiperSlide>
-        )}
+        ))}
         <div className="cs_pagination cs_style1"></div>
       </Swiper>
     </>
