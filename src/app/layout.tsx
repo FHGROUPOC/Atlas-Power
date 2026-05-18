@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
         <head>
-        {/* <link rel="icon" href="/assets/img/favicon.svg" /> */}
+        <link rel="icon" href="https://placehold.co/64x64/1a1a1a/ffffff?text=AP" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;900&family=Kanit:wght@400;500;600;700&display=swap"
