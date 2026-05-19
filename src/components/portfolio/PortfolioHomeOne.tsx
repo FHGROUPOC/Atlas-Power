@@ -21,32 +21,32 @@ interface DataType {
 const portfolio_slider: DataType[] = [
   {
     img: "https://i.pinimg.com/736x/2d/a9/4c/2da94c0d6dd951e381f544d888eeecc3.jpg",
-    title: `Project Task Management`,
+    title: `Machain`,
     category: `Digital Services / App Design`,
   },
   {
     img: "https://i.pinimg.com/736x/1f/5b/fd/1f5bfdff00934f16ca4a2baf456ebf7f.jpg",
-    title: `Project Task Management`,
+    title: `Machain`,
     category: `Digital Services / Web Design`,
   },
   {
     img: "https://i.pinimg.com/736x/c8/71/48/c8714891d7149a3618eb513a48b2cba4.jpg",
-    title: `Project Task Management`,
+    title: `Machain`,
     category: `Digital Services / Figma Design`,
   },
   {
     img: "https://i.pinimg.com/736x/ed/6e/a4/ed6ea415a66602d2077ad4ad07057802.jpg",
-    title: `Project Task Management`,
+    title: `Machain`,
     category: `Digital Services / App Design`,
   },
   {
     img: "https://i.pinimg.com/736x/e5/91/5d/e5915d2d3ac3fe88d6757466f0a1b631.jpg",
-    title: `Project Task Management`,
+    title: `Machain`,
     category: `Digital Services / Web Design`,
   },
   {
     img: "https://i.pinimg.com/1200x/6f/3f/72/6f3f7291811ab2ea9e542a12eddea498.jpg",
-    title: `Project Task Management`,
+    title: `Machain`,
     category: `Digital Services / Figma Design`,
   },
 ]

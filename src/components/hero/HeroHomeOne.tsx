@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Swiper core styles
 import "swiper/css";
-import "swiper/css/pagination";
 
 const hero_slider: Array<{
   img: string;
