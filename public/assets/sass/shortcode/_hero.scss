@@ -3,14 +3,14 @@
 ----------------------------------------------------------------*/
 
 .cs_hero.cs_style1 {
-	min-height: 100vh;
+	min-height: 50vh;
 	position: relative;
 	padding: 150px 0 100px;
 	overflow: hidden;
 	.cs_hero_bg {
 		height: calc(100% + 100px);
 		position: absolute;
-		width: 45%;
+		width: 100%;
 		left: 0;
 		top: 0;
 		&.cs_hero_bg_full_width {

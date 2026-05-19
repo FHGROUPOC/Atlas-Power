@@ -3,45 +3,98 @@ import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const hero_slider = [
+// Swiper core styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+const hero_slider: Array<{
+  img: string;
+  sub_title: string;
+  title: string;
+  des: string;
+  custom_style?: React.CSSProperties;
+}> = [
   {
-    img: `https://sobhaconstructions.com/source/uploads/2024/03/3_20240314_941ea.png`,
+    img: `https://i.pinimg.com/1200x/8f/0c/c8/8f0cc8b46063ea32305b2fc707dc42f6.jpg`,
     sub_title: "Creative Agency",
     title: "Expert Digital Services for Your Own Business",
-    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
+    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online.`,
   },
   {
-    img: `https://sobhaconstructions.com/source/uploads/2024/03/4_20240314_fa77e.png`,
+    img: `https://res.cloudinary.com/dgtk4rthy/image/upload/v1779196357/5f41db4b997330a7ba925a953a7318b7_qjc2sw.jpg`,
     sub_title: "Creative Agency",
     title: "Expert Digital Services for Your Own Business",
-    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
+    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online.`,
+    // ─── SECOND IMAGE BOX FIX ───
+    // Jab 90deg rotate karein, to width ko aspect-ratio ke mutabiq transform karna padta hai taake corners khali na bachein
+    custom_style: {
+      transform: "rotate(90deg)",
+      backgroundSize: "cover",
+      width: "100vh",  // Width ko Screen ki Height jitna kiya
+      height: "100vw", // Height ko Screen ki Width jitna kiya
+      position: "absolute",
+    },
   },
-  {
-    img: `https://sobhaconstructions.com/source/uploads/2023/12/jpeg-optimizer_pic-bnr_20231011_e7c22_20231219_33493.jpg`,
-    sub_title: "Creative Agency",
-    title: "Expert Digital Services for Your Own Business",
-    des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
-  },
+  // {
+  //   img: `https://sobhaconstructions.com/source/uploads/2023/12/jpeg-optimizer_pic-bnr_20231011_e7c22_20231219_33493.jpg`,
+  //   sub_title: "Creative Agency",
+  //   title: "Expert Digital Services for Your Own Business",
+  //   des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online.`,
+  // },
 ];
 
 const HeroHomeOne = () => {
   return (
     <>
-      <style>
+      <style jsx global>
         {`
-  .cs_hero_bg .cs_bg .cs_parallax_bg{
-    position: relative;
-  }
-.cs_hero.cs_style1 .cs_hero_bg .imgLiquid::before {
-  content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(78, 78, 78, 0) 30%, rgba(130, 130, 130, 0) 70%, rgba(0, 0, 0, 1) 100%);
-  }`}
+          .cs_hero.cs_style1 {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+          }
+          .cs_hero_bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+          }
+          .imgLiquid {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all 0.3s ease;
+          }
+          /* Overlay / Shadow Effect */
+          .cs_hero.cs_style1 .cs_hero_bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            z-index: 1;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.8) 0%,
+              rgba(0, 0, 0, 0.2) 50%,
+              rgba(0, 0, 0, 0.8) 100%
+            );
+            pointer-events: none;
+          }
+          .cs_hero_text {
+            position: relative;
+            z-index: 2;
+          }
+        `}
       </style>
 
       <Swiper
@@ -54,18 +107,12 @@ const HeroHomeOne = () => {
         {hero_slider.map((item, index) => (
           <SwiperSlide key={index} className="swiper-slide">
             <div className="cs_hero cs_style1 cs_center cs_parallax">
-              <div
-                className="cs_hero_bg cs_bg cs_parallax_bg"
-                style={{ width: "100%" }}
-              >
+              <div className="cs_hero_bg">
                 <figure
                   className="imgLiquid imgLiquid_bgSize imgLiquid_ready"
                   style={{
                     backgroundImage: `url(${item.img})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    backgroundRepeat: "no-repeat",
-                    height: "100%",
+                    ...item.custom_style
                   }}
                 >
                   <img
@@ -78,32 +125,9 @@ const HeroHomeOne = () => {
               </div>
               <div className="container">
                 <div className="cs_hero_text">
-                  {/* <div className="cs_hero_mini_title">
-                    <svg width="134" height="12" viewBox="0 0 134 12" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M133.53 6.53033C133.823 6.23744 133.823 5.76256 133.53 5.46967L128.757 0.696699C128.464 0.403806 127.99 0.403806 127.697 0.696699C127.404 0.989593 127.404 1.46447 127.697 1.75736L131.939 6L127.697 10.2426C127.404 10.5355 127.404 11.0104 127.697 11.3033C127.99 11.5962 128.464 11.5962 128.757 11.3033L133.53 6.53033ZM0 6.75H133V5.25H0V6.75Z"
-                        fill="#101010" />
-                    </svg>
-                    {item.sub_title}
-                  </div> */}
                   <div className="cs_height_20 cs_height_lg_20"></div>
                   <h1 className="cs_hero_title text-white">{item.title}</h1>
                   <div className="cs_height_70 cs_height_lg_60"></div>
-                  {/* <div className="cs_hero_text_in">
-                    <div className="cs_hero_subtitle">
-                      {item.des}
-                    </div> */}
-                  {/* <div className="cs_height_65 cs_height_lg_40"></div>
-                    <div className="cs_hero_btn_wrap">
-                      <div className="cs_round_btn_wrap">
-                        <Link href="/portfolio"
-                          className="cs_hero_btn cs_round_btn btn-item"><span></span>
-                          Our
-                          Projects</Link>
-                      </div> 
-                    </div>
-                  </div>*/}
                 </div>
               </div>
             </div>

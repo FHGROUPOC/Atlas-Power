@@ -13,39 +13,39 @@ import portfolio_img_2 from '@/assets/img/portfolio_2.jpg';
 import portfolio_img_3 from '@/assets/img/portfolio_3.jpg';
 
 interface DataType {
-  img: StaticImageData;
+  img: StaticImageData | string;
   title: string;
   category: string;
 }
 
 const portfolio_slider: DataType[] = [
   {
-    img: portfolio_img_1,
+    img: "https://i.pinimg.com/736x/2d/a9/4c/2da94c0d6dd951e381f544d888eeecc3.jpg",
     title: `Project Task Management`,
     category: `Digital Services / App Design`,
   },
   {
-    img: portfolio_img_2,
+    img: "https://i.pinimg.com/736x/1f/5b/fd/1f5bfdff00934f16ca4a2baf456ebf7f.jpg",
     title: `Project Task Management`,
     category: `Digital Services / Web Design`,
   },
   {
-    img: portfolio_img_3,
+    img: "https://i.pinimg.com/736x/c8/71/48/c8714891d7149a3618eb513a48b2cba4.jpg",
     title: `Project Task Management`,
     category: `Digital Services / Figma Design`,
   },
   {
-    img: portfolio_img_1,
+    img: "https://i.pinimg.com/736x/ed/6e/a4/ed6ea415a66602d2077ad4ad07057802.jpg",
     title: `Project Task Management`,
     category: `Digital Services / App Design`,
   },
   {
-    img: portfolio_img_2,
+    img: "https://i.pinimg.com/736x/e5/91/5d/e5915d2d3ac3fe88d6757466f0a1b631.jpg",
     title: `Project Task Management`,
     category: `Digital Services / Web Design`,
   },
   {
-    img: portfolio_img_3,
+    img: "https://i.pinimg.com/1200x/6f/3f/72/6f3f7291811ab2ea9e542a12eddea498.jpg",
     title: `Project Task Management`,
     category: `Digital Services / Figma Design`,
   },
@@ -55,7 +55,7 @@ const PortfolioHomeOne = () => {
   return (
     <>
       {/* ─── CSS UPDATED FOR TEXT VISIBILITY ─── */}
-      <style jsx global>{`
+      <style  global>{`
         .cs_horizontal_scrolls .swiper-slide {
           filter: grayscale(100%);
           opacity: 0.5;
@@ -111,7 +111,11 @@ const PortfolioHomeOne = () => {
               <div className="cs_horizontal_scroll">
                 <Link href="/portfolio-details" className="cs_portfolio cs_style_1">
                   <div className="cs_portfolio_img">
-                    <Image src={item.img} alt="Thumb" />
+                    <img
+                      src={typeof item.img === 'string' ? item.img : item.img.src}
+                      alt="Thumb"
+                      style={{ width: "100%", height: "570px", objectFit: "cover" }}
+                    />
                   </div>
                   <div className="cs_portfolio_overlay"></div>
                   <div className="cs_portfolio_info">
