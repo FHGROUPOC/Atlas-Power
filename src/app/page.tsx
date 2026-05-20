@@ -27,7 +27,7 @@ export const metadata = {
 const index = () => {
   return (
     <Wrapper>      
-      <HeaderOne />
+      <HeaderOne variant="white"/>
       <div id="scrollsmoother-container">
         <HeroHomeOne />
         {/* <MarqueeAreaHomeOne /> */}
