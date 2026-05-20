@@ -241,7 +241,7 @@ const HeaderOne = () => {
 									<Image src={Logo_white} alt="Logo" />
 								</Link> */}
 								<Link href="/">
-								<h4 className="text-white">Atlas</h4>
+								<h4 className="text-white m-0">Atlas</h4>
 								</Link>
 							</div>
 							<div className="cs_main_header_right">

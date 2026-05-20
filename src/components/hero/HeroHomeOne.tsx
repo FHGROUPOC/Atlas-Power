@@ -29,7 +29,7 @@ const hero_slider: Array<{
     custom_style: {
       transform: "rotate(90deg)",
       backgroundSize: "cover",
-      width: "100vh",  // Width ko Screen ki Height jitna kiya
+      width: "50vh",  // Width ko Screen ki Height jitna kiya
       height: "100vw", // Height ko Screen ki Width jitna kiya
       position: "absolute",
     },
@@ -106,7 +106,7 @@ const HeroHomeOne = () => {
         {hero_slider.map((item, index) => (
           <SwiperSlide key={index} className="swiper-slide">
             <div className="cs_hero cs_style1 cs_center cs_parallax">
-              <div className="cs_hero_bg">
+              <div className="cs_hero_bg" style={{ opacity: "unset" }}>
                 <figure
                   className="imgLiquid imgLiquid_bgSize imgLiquid_ready"
                   style={{
@@ -126,7 +126,8 @@ const HeroHomeOne = () => {
                 <div className="cs_hero_text">
                   <div className="cs_height_20 cs_height_lg_20"></div>
                   <h1 className="cs_hero_title text-white">{item.title}</h1>
-                  <div className="cs_height_70 cs_height_lg_60"></div>
+                  <p className="cs_hero_subtitle text-white">{item.des}</p>
+                  <div className="cs_height_10 cs_height_lg_60"></div>
                 </div>
               </div>
             </div>

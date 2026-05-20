@@ -16,6 +16,7 @@ import SubscribeHomeOne from '@/components/subscribe/SubscribeHomeOne';
 import BrandHomeOne from '@/components/brand/BrandHomeOne';
 import FooterOne from '@/layouts/footers/FooterOne';
 import Wrapper from '@/layouts/Wrapper';
+import GellaryGrid from '@/components/gellary/Gellary-Grid';
 
 
 export const metadata = {
@@ -32,14 +33,15 @@ const index = () => {
         {/* <MarqueeAreaHomeOne /> */}
         <AboutHomeOne />
         <PortfolioHomeOne />
+        <GellaryGrid />
+        <SubscribeHomeOne />
+        <BrandHomeOne style_2={false}  />
         {/* <ServiceHomeOne />
         <AwardsHomeOne  style_2={true}/>
         <Testimonial />
         <FunFactHomeOne />
         <VideoHomeOne />
-        <BlogHomeOne />
-        <SubscribeHomeOne />
-        <BrandHomeOne style_2={false}  /> */}
+        <BlogHomeOne /> */}
         <FooterOne />
       </div>
     </Wrapper>

@@ -5,10 +5,10 @@
 .cs_hero.cs_style1 {
 	min-height: 50vh;
 	position: relative;
-	padding: 150px 0 100px;
+	padding: 300px 0 0px;
 	overflow: hidden;
 	.cs_hero_bg {
-		height: calc(100% + 100px);
+		height:100%;
 		position: absolute;
 		width: 100%;
 		left: 0;
@@ -23,8 +23,8 @@
 	}
 	@media only screen and (min-width: 991px) {
 		.cs_hero_title {
-			font-size: 70px;
-			font-weight: 600;
+			font-size: 50px;
+			font-weight: 200;
 			margin-bottom: 0;
 		}
 	}

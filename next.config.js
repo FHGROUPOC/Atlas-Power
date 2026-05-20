@@ -1,21 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
+
+   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.pinimg.com', // <--- Asal domain yeh hai jo error mein aa raha hai
-        port: '',
-        pathname: '/**',
+        hostname: '**', // This wildcard allows images from ANY secure website
       },
       {
-        protocol: 'https',
-        hostname: 'www.pinterest.com',
-        port: '',
-        pathname: '/**',
+        protocol: 'http',
+        hostname: '**', // This wildcard allows images from ANY unsecure website
       },
     ],
   },
+  
 };
 
 module.exports = nextConfig;
