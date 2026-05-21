@@ -9,7 +9,7 @@ import Image, { StaticImageData } from 'next/image';
 
 
 interface DataType {
-  img: StaticImageData;
+  img: StaticImageData | string;
   name: string;
   location: string;
   des: string;

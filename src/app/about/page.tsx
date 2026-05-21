@@ -14,7 +14,7 @@ import Wrapper from "@/layouts/Wrapper";
 import FooterOne from "@/layouts/footers/FooterOne";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import VideoPopup from "@/components/modals/VideoPopup";
-// import HomeVideo from "@/components/Home_Video/home_video";
+import HomeVideo from "@/components/video/VideoHomeFive";
 
 
 
@@ -33,7 +33,7 @@ const index = () => {
               {/* <TeamHomeTwo style_2={true} style_3={true} /> */}
               {/* <AwardsHomeOne style_2={true} /> */}
               <Testimonial />
-              {/* <HomeVideo /> */}
+              <HomeVideo />
               <Gellary />
               <BrandHomeOne />
             </main>

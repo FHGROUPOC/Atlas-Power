@@ -19,7 +19,7 @@ const VideoHomeFive = () => {
           </a>
         </div>
       </div>
-      <div className="cs_height_150 cs_height_lg_60"></div>
+      {/* <div className="cs_height_150 cs_height_lg_60"></div> */}
       {/* video modal start */}
       <VideoPopup
         isVideoOpen={isVideoOpen}
