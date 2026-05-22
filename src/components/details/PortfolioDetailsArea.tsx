@@ -2,7 +2,7 @@
 // src/components/PortfolioDetailsArea.tsx
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link'; // <-- Link component import kiya matching assets ke liye
+import Link from 'next/link'; 
 import { ProjectDataType } from '@/data/portfolioData';
 
 import protfolio_details_1 from "@/assets/img/protfolio_details_1.jpg"; 
@@ -22,11 +22,41 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
   const [dateTo, setDateTo] = useState('2023-08-02');
   const [quantity, setQuantity] = useState('1');
   const [price, setPrice] = useState('');
+  const [loading, setLoading] = useState(false); // Processing state tracker
 
-  // Handle button submission trigger
-  const handleFormAction = () => {
-    alert(`Project Details Logged!\nDuration: ${dateFrom} to ${dateTo}\nQuantity: ${quantity}\nPrice: ${price || 'Not Specified'}`);
-    // Yahan aap apni navigation redirection ya API actions wrap kar sakte hain
+  // Handle button submission trigger via API
+  const handleFormAction = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          projectTitle: project?.title,
+          dateFrom,
+          dateTo,
+          quantity,
+          price,
+        }),
+      });
+
+      const resData = await response.json();
+
+      if (resData.success) {
+        alert('Email Sent Successfully! 🚀');
+      } else {
+        alert(`Failed to send email: ${resData.error}`);
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Something went wrong while dispatching mail network packets.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Safety Guard: Agar query parameter database object key se matching na ho
@@ -105,13 +135,13 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
               <Image src={protfolio_details_1} alt="protfolio_details_1" />
             </div>
 
-            {/* ─── NEW INPUT FORM SECTION WITH CUSTOM SVG ARROW BUTTON ─── */}
+            {/* ─── INPUT FORM SECTION WITH REAL CALENDARS & NODEMAILER TRIGGER ─── */}
             <div className="cs_height_50 cs_height_lg_30"></div>
             <div className="p-4 rounded-3 text-white" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
               <div className="row gy-4 align-items-end">
                 
                 {/* 1. Single Box containing Dual Real Calendar Inputs */}
-                <div className="col-md-4">
+                <div className="col-md-6">
                   <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600' ,color:'#ff6b00'}}>
                     Date Duration Range
                   </label>
@@ -150,7 +180,7 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
                 </div>
 
                 {/* 3. Price Input Box */}
-                <div className="col-md-3">
+                {/* <div className="col-md-3">
                   <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600',color:'#ff6b00' }}>
                     Price / Valuation
                   </label>
@@ -162,16 +192,16 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
                     className="w-100 p-3 rounded text-white"
                     style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.15)', outline: 'none', height: '52px' }}
                   />
-                </div>
+                </div> */}
 
-                {/* 4. Action Button with Theme Style and SVG Arrow */}
+                {/* 4. Submit Layout Link Styled as custom theme action */}
                 <div className="col-md-3">
-                  <Link  href="#"
-                    type="button"
+                  <Link href="#"
                     onClick={handleFormAction}
-                    className="cs_btn cs_style_1"
+                    className={`cs_btn cs_style_1  ${loading ? 'disabled' : ''}`}
+                    style={{ pointerEvents: loading ? 'none' : 'auto', opacity: loading ? 0.6 : 1, textDecoration: 'none' }}
                   >
-                    <span>Submit Details</span>
+                    <span>{loading ? 'Sending...' : 'Submit Details'}</span>
                     <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M18.5303 7.03033C18.8232 6.73744 18.8232 6.26256 18.5303 5.96967L13.7574 1.1967C13.4645 0.903806 12.9896 0.903806 12.6967 1.1967C12.4038 1.48959 12.4038 1.96447 12.6967 2.25736L16.9393 6.5L12.6967 10.7426C12.4038 11.0355 12.4038 11.5104 12.6967 11.8033C12.9896 12.0962 13.4645 12.0962 13.7574 11.8033L18.5303 7.03033ZM0 7.25H18V5.75H0V7.25Z"
