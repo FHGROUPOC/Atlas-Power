@@ -1,7 +1,9 @@
-
-import React from 'react';
-
+"use client";
+// src/components/PortfolioDetailsArea.tsx
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // <-- Link component import kiya matching assets ke liye
+import { ProjectDataType } from '@/data/portfolioData';
 
 import protfolio_details_1 from "@/assets/img/protfolio_details_1.jpg"; 
 import protfolio_details_2 from "@/assets/img/portfoliodetails_2.jpg"; 
@@ -10,9 +12,33 @@ import protfolio_details_4 from "@/assets/img/portfolio_solution_1.jpg";
 import protfolio_details_5 from "@/assets/img/portfolio_solution_2.jpg"; 
 import protfolio_details_6 from "@/assets/img/portfolio_solution_3.jpg"; 
 
+interface PortfolioDetailsAreaProps {
+  project: ProjectDataType;
+}
 
+const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) => {
+  // Local states for dates calendar, quantity and custom pricing hooks
+  const [dateFrom, setDateFrom] = useState('2023-06-02');
+  const [dateTo, setDateTo] = useState('2023-08-02');
+  const [quantity, setQuantity] = useState('1');
+  const [price, setPrice] = useState('');
 
-const PortfolioDetailsArea = () => {
+  // Handle button submission trigger
+  const handleFormAction = () => {
+    alert(`Project Details Logged!\nDuration: ${dateFrom} to ${dateTo}\nQuantity: ${quantity}\nPrice: ${price || 'Not Specified'}`);
+    // Yahan aap apni navigation redirection ya API actions wrap kar sakte hain
+  };
+
+  // Safety Guard: Agar query parameter database object key se matching na ho
+  if (!project) {
+    return (
+      <div className="container text-center text-white" style={{ padding: "200px 0" }}>
+        <h2>Project Data Not Found</h2>
+        <p className="text-white-50">Please check if the slug matches your portfolioDatabase keys exactly.</p>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="cs_height_219 cs_height_lg_120"></div> 
@@ -21,14 +47,14 @@ const PortfolioDetailsArea = () => {
           <div className="cs_section_heading cs_style_1 cs_type_1">
             <div className="cs_section_heading_text">
               <h2 className="cs_section_title anim_text_writting">
-                Aske - Task Management Web And Mobile Application
+                {project.title}
               </h2>
             </div>
             <div className="cs_section_heading_right cs_btn_anim">
               <div className="cs_btn cs_style_2 anim_div_ShowZoom">
-                <a target='_blank' href="https://behance.com"   className="col cs_center">Behance</a>
-                <a target='_blank' href="https://dribbble.com"   className="col cs_center">Dribbble</a>
-                <a target='_blank' href="https://github.com"   className="col cs_center">Github</a>
+                <a target='_blank' rel="noreferrer" href={project.behanceLink || "https://behance.com"}   className="col cs_center">Behance</a>
+                <a target='_blank' rel="noreferrer" href={project.dribbbleLink || "https://dribbble.com"}   className="col cs_center">Dribbble</a>
+                <a target='_blank' rel="noreferrer" href={project.githubLink || "https://github.com"}   className="col cs_center">Github</a>
               </div>
             </div>
           </div>
@@ -45,7 +71,7 @@ const PortfolioDetailsArea = () => {
                   <div className="cs_text_style_1">
                     <p className="cs_headed_text">Client</p>
                     <h6 className="cs_title_text">
-                      Faulsk Company Inc <br /> Canada
+                      {project.client}
                     </h6>
                   </div>
                 </div>
@@ -53,7 +79,7 @@ const PortfolioDetailsArea = () => {
                   <div className="cs_text_style_1">
                     <p className="cs_headed_text">Services</p>
                     <h6 className="cs_title_text">
-                      UX Research, Wireframing,<br /> UI Design
+                      {project.services}
                     </h6>
                   </div>
                 </div>
@@ -61,7 +87,7 @@ const PortfolioDetailsArea = () => {
                   <div className="cs_text_style_1">
                     <p className="cs_headed_text">Date</p>
                     <h6 className="cs_title_text">
-                      05 Dec 2022 - 01 Jan 2023 <br /> 1 Month
+                      {project.date} <br /> {project.duration}
                     </h6>
                   </div>
                 </div>
@@ -78,32 +104,100 @@ const PortfolioDetailsArea = () => {
             <div className="reveal">
               <Image src={protfolio_details_1} alt="protfolio_details_1" />
             </div>
+
+            {/* ─── NEW INPUT FORM SECTION WITH CUSTOM SVG ARROW BUTTON ─── */}
+            <div className="cs_height_50 cs_height_lg_30"></div>
+            <div className="p-4 rounded-3 text-white" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div className="row gy-4 align-items-end">
+                
+                {/* 1. Single Box containing Dual Real Calendar Inputs */}
+                <div className="col-md-4">
+                  <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600' ,color:'#ff6b00'}}>
+                    Date Duration Range
+                  </label>
+                  <div className="d-flex align-items-center rounded p-2" style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.15)', height: '52px' }}>
+                    <input 
+                      type="date" 
+                      value={dateFrom}
+                      onChange={(e) => setDateFrom(e.target.value)}
+                      className="bg-transparent border-0 text-white w-100 p-1 outline-none"
+                      style={{ colorScheme: 'dark', cursor: 'pointer' }}
+                    />
+                    <span className="mx-2 text-muted" style={{ fontSize: '14px' }}>to</span>
+                    <input 
+                      type="date" 
+                      value={dateTo}
+                      onChange={(e) => setDateTo(e.target.value)}
+                      className="bg-transparent border-0 text-white w-100 p-1 outline-none"
+                      style={{ colorScheme: 'dark', cursor: 'pointer' }}
+                    />
+                  </div>
+                </div>
+
+                {/* 2. Quantity Input Box */}
+                <div className="col-md-2">
+                  <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600',color:'#ff6b00' }}>
+                    Quantity
+                  </label>
+                  <input 
+                    type="number" 
+                    min="1"
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
+                    className="w-100 p-3 rounded text-white"
+                    style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.15)', outline: 'none', height: '52px' }}
+                  />
+                </div>
+
+                {/* 3. Price Input Box */}
+                <div className="col-md-3">
+                  <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600',color:'#ff6b00' }}>
+                    Price / Valuation
+                  </label>
+                  <input 
+                    type="text" 
+                    placeholder="Enter Price (e.g. $500)"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    className="w-100 p-3 rounded text-white"
+                    style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.15)', outline: 'none', height: '52px' }}
+                  />
+                </div>
+
+                {/* 4. Action Button with Theme Style and SVG Arrow */}
+                <div className="col-md-3">
+                  <Link  href="#"
+                    type="button"
+                    onClick={handleFormAction}
+                    className="cs_btn cs_style_1"
+                  >
+                    <span>Submit Details</span>
+                    <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18.5303 7.03033C18.8232 6.73744 18.8232 6.26256 18.5303 5.96967L13.7574 1.1967C13.4645 0.903806 12.9896 0.903806 12.6967 1.1967C12.4038 1.48959 12.4038 1.96447 12.6967 2.25736L16.9393 6.5L12.6967 10.7426C12.4038 11.0355 12.4038 11.5104 12.6967 11.8033C12.9896 12.0962 13.4645 12.0962 13.7574 11.8033L18.5303 7.03033ZM0 7.25H18V5.75H0V7.25Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+
+              </div>
+            </div>
+            {/* ──────────────────────────────────────────────────────── */}
+
             <div className="cs_height_100 cs_height_lg_60"></div>
             <div className="anim_div_ShowDowns">
               <div className="cs_img_show_text cs_text_style_1">
-                <h4 className="cs_heading_text anim_heading_title">Challanges</h4>
+                <h4 className="cs_heading_text anim_heading_title">{project.challengesTitle}</h4>
                 <p className="cs_text_style_body">
-                  Welcome to our digital agency! We specialize in helping businesses like yours succeed
-                  online. From website design and development to digital marketing and adver tising, we
-                  have the tools and expertise to elevate your online presence. Welcome to our digital
-                  agency! We specialize in helping businesses like yours online. From website design and
-                  development to digital marketing and advertising, we have the tools and expertise to
-                  elevate your online presence. Welcome to our digital
-                  agency! We specialize in helping businesses like yours succeed online.
+                  {project.challengesBody}
                 </p>
               </div>
               <div className="cs_ul_ml">
                 <ul>
-                  <li>Design Welcome to our digital agency!</li>
-                  <li>
-                    Dev online. From website design Implementation world of digital.
-                  </li>
-                  <li>
-                    Implementation evolving world of digital Design Welcome to our digital agency!
-                  </li>
-                  <li>
-                    Launch growth and reach your goals. Implementation evolving world of digital.
-                  </li>
+                  {project.challengeList && project.challengeList.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -134,13 +228,7 @@ const PortfolioDetailsArea = () => {
                     Solutions
                   </h4>
                   <p className="cs_text_style_body">
-                    Welcome to our digital agency! We specialize in helping businesses like yours
-                    succeed online. From website design and development to digital marketing and adver
-                    tising, we have the tools and expertise to elevate your online presence. Welcome to
-                    our digital
-                    agency! We specialize in helping businesses like yours online. From website design
-                    and development to digital marketing and advertising, we have the tools and
-                    expertise to elevate your online presence.
+                    {project.solutionsBody}
                   </p>
                 </div>
                 <div className="cs_solutions_section_img_show">
