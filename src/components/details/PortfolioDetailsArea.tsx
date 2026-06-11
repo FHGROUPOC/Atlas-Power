@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link'; 
 import { ProjectDataType } from '@/data/portfolioData';
 
-import protfolio_details_1 from "@/assets/img/protfolio_details_1.jpg"; 
+import protfolio_details_1 from "@/assets/img/portfolio_solution_1.jpg"; 
 import protfolio_details_2 from "@/assets/img/portfoliodetails_2.jpg"; 
 import protfolio_details_3 from "@/assets/img/portfoliodetails_1.jpg"; 
 import protfolio_details_4 from "@/assets/img/portfolio_solution_1.jpg"; 
@@ -22,7 +22,22 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
   const [dateTo, setDateTo] = useState('2023-08-02');
   const [quantity, setQuantity] = useState('1');
   const [price, setPrice] = useState('');
-  const [loading, setLoading] = useState(false); // Processing state tracker
+  const [loading, setLoading] = useState(false);
+
+  // Helper functions to open system calendar automatically on wrapper click
+  const openCalendarFrom = (e: React.MouseEvent<HTMLDivElement>) => {
+    const input = e.currentTarget.querySelector('.date-from-input') as HTMLInputElement;
+    if (input && typeof input.showPicker === 'function') {
+      input.showPicker();
+    }
+  };
+
+  const openCalendarTo = (e: React.MouseEvent<HTMLDivElement>) => {
+    const input = e.currentTarget.querySelector('.date-to-input') as HTMLInputElement;
+    if (input && typeof input.showPicker === 'function') {
+      input.showPicker();
+    }
+  };
 
   // Handle button submission trigger via API
   const handleFormAction = async (e: React.MouseEvent) => {
@@ -132,41 +147,82 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
         <div className="container">
           <div className="cs_portfolio_details">
             <div className="reveal">
-              <Image src={protfolio_details_1} alt="protfolio_details_1" />
+              <Image 
+                src={protfolio_details_1} 
+                alt="protfolio_details_1" 
+                width={1200} 
+                height={600} 
+                style={{ width: '100%', height: '100%' }}
+              />
             </div>
 
-            {/* ─── INPUT FORM SECTION WITH REAL CALENDARS & NODEMAILER TRIGGER ─── */}
+            {/* ─── PREMIUM GLASSMORPHISM FORM CARD ─── */}
             <div className="cs_height_50 cs_height_lg_30"></div>
-            <div className="p-4 rounded-3 text-white" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+            <div className="p-4 p-md-5 rounded-4 text-white position-relative overflow-hidden" 
+                 style={{ 
+                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)', 
+                   border: '1px solid rgba(255, 255, 255, 0.07)',
+                   backdropFilter: 'blur(10px)',
+                   boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
+                 }}>
+              
+              <div className="mb-4">
+                <h3 style={{ fontSize: '24px', fontWeight: '600', color: '#000', marginBottom: '8px', letterSpacing: '-0.5px' }}>
+                  Request Project Deployment
+                </h3>
+                <p style={{ fontSize: '14px', color: '#000', lineHeight: '1.6', maxWidth: '560px', margin: 0 }}>
+                  Please specify your preferred timeline and required capacity units. Our team will review the parameters and dispatch a finalized confirmation directly to your inbox.
+                </p>
+              </div>
+
               <div className="row gy-4 align-items-end">
                 
-                {/* 1. Single Box containing Dual Real Calendar Inputs */}
+                {/* 1. Date Range Split Boxes (Clickable full area) */}
                 <div className="col-md-6">
-                  <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600' ,color:'#ff6b00'}}>
+                  <label className="d-block mb-2 text-uppercase tracking-wider" 
+                         style={{ fontSize: '11px', fontWeight: '700', color: '#ff6b00', letterSpacing: '1.5px' }}>
                     Date Duration Range
                   </label>
-                  <div className="d-flex align-items-center rounded p-2" style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.15)', height: '52px' }}>
-                    <input 
-                      type="date" 
-                      value={dateFrom}
-                      onChange={(e) => setDateFrom(e.target.value)}
-                      className="bg-transparent border-0 text-white w-100 p-1 outline-none"
-                      style={{ colorScheme: 'dark', cursor: 'pointer' }}
-                    />
-                    <span className="mx-2 text-muted" style={{ fontSize: '14px' }}>to</span>
-                    <input 
-                      type="date" 
-                      value={dateTo}
-                      onChange={(e) => setDateTo(e.target.value)}
-                      className="bg-transparent border-0 text-white w-100 p-1 outline-none"
-                      style={{ colorScheme: 'dark', cursor: 'pointer' }}
-                    />
+                  <div className="row g-2">
+                    {/* Date From Interactive Half */}
+                    <div className="col-6">
+                      <div 
+                        onClick={openCalendarFrom}
+                        className="d-flex align-items-center rounded-3 px-3" 
+                        style={{ border: '1px solid #ff6b00', height: '56px', cursor: 'pointer', background: 'transparent' }}
+                      >
+                        <input 
+                          type="date" 
+                          value={dateFrom}
+                          onChange={(e) => setDateFrom(e.target.value)}
+                          className="bg-transparent border-0 w-100 text-black outline-none date-from-input"
+                          style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}
+                        />
+                      </div>
+                    </div>
+                    {/* Date To Interactive Half */}
+                    <div className="col-6">
+                      <div 
+                        onClick={openCalendarTo}
+                        className="d-flex align-items-center rounded-3 px-3" 
+                        style={{ border: '1px solid #ff6b00', height: '56px', cursor: 'pointer', background: 'transparent' }}
+                      >
+                        <input 
+                          type="date" 
+                          value={dateTo}
+                          onChange={(e) => setDateTo(e.target.value)}
+                          className="bg-transparent border-0 w-100 text-black outline-none date-to-input"
+                          style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* 2. Quantity Input Box */}
-                <div className="col-md-2">
-                  <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600',color:'#ff6b00' }}>
+                {/* 2. Quantity Box */}
+                <div className="col-md-3">
+                  <label className="d-block mb-2 text-uppercase tracking-wider" 
+                         style={{ fontSize: '11px', fontWeight: '700', color: '#ff6b00', letterSpacing: '1.5px' }}>
                     Quantity
                   </label>
                   <input 
@@ -174,35 +230,38 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
                     min="1"
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
-                    className="w-100 p-3 rounded text-white"
-                    style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.15)', outline: 'none', height: '52px' }}
+                    className="w-100 px-3 rounded-3 text-black"
+                    style={{ 
+                      border: '1px solid #ff6b00', 
+                      outline: 'none', 
+                      height: '56px',
+                      fontSize: '16px',
+                      fontWeight: '500',
+                      transition: 'all 0.3s ease'
+                    }}
                   />
                 </div>
 
-                {/* 3. Price Input Box */}
-                {/* <div className="col-md-3">
-                  <label className="d-block mb-2 text-uppercase tracking-wider " style={{ fontSize: '12px', fontWeight: '600',color:'#ff6b00' }}>
-                    Price / Valuation
-                  </label>
-                  <input 
-                    type="text" 
-                    placeholder="Enter Price (e.g. $500)"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    className="w-100 p-3 rounded text-white"
-                    style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.15)', outline: 'none', height: '52px' }}
-                  />
-                </div> */}
-
-                {/* 4. Submit Layout Link Styled as custom theme action */}
+                {/* 3. Action Submit Button */}
                 <div className="col-md-3">
                   <Link href="#"
                     onClick={handleFormAction}
-                    className={`cs_btn cs_style_1  ${loading ? 'disabled' : ''}`}
-                    style={{ pointerEvents: loading ? 'none' : 'auto', opacity: loading ? 0.6 : 1, textDecoration: 'none' }}
+                    className={`w-100 d-flex justify-content-between align-items-center px-4 rounded-3`}
+                    style={{ 
+                      pointerEvents: loading ? 'none' : 'auto', 
+                      opacity: loading ? 0.6 : 1, 
+                      textDecoration: 'none',
+                      height: '56px',
+                      background: loading ? '#333' : '#ff6b00',
+                      color: '#fff',
+                      fontWeight: '600',
+                      fontSize: '15px',
+                      transition: 'all 0.3s ease',
+                      border: 'none'
+                    }}
                   >
                     <span>{loading ? 'Sending...' : 'Submit Details'}</span>
-                    <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'transform 0.3s ease' }}>
                       <path
                         d="M18.5303 7.03033C18.8232 6.73744 18.8232 6.26256 18.5303 5.96967L13.7574 1.1967C13.4645 0.903806 12.9896 0.903806 12.6967 1.1967C12.4038 1.48959 12.4038 1.96447 12.6967 2.25736L16.9393 6.5L12.6967 10.7426C12.4038 11.0355 12.4038 11.5104 12.6967 11.8033C12.9896 12.0962 13.4645 12.0962 13.7574 11.8033L18.5303 7.03033ZM0 7.25H18V5.75H0V7.25Z"
                         fill="currentColor"
