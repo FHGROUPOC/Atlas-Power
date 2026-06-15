@@ -14,6 +14,13 @@ export interface ProjectDataType {
   behanceLink?: string;
   dribbbleLink?: string;
   githubLink?: string;
+  // Dynamic images strings mapped to JSON keys
+  protfolio_details_1: string;
+  protfolio_details_2: string;
+  protfolio_details_3: string;
+  protfolio_details_4: string;
+  protfolio_details_5: string;
+  protfolio_details_6: string;
 }
 
 export const portfolioDatabase: Record<string, ProjectDataType> = {
@@ -35,7 +42,14 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     solutionsBody: "Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence.",
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
-    githubLink: "https://github.com"
+    githubLink: "https://github.com",
+    // Images strings stored inside JSON structures
+    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-1_v7vogl.webp", 
+    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-2_jqxnrd.webp",
+    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-3_wsovsk.webp",
+    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-4_bgwlu1.webp",
+    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-5_ovnnwt.webp",
+    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-6_zcxdgw.webp",
   },
   "machain-2": {
     title: "Machain 2 - Corporate Full-Stack Infrastructure",
@@ -54,7 +68,13 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     solutionsBody: "We leveraged scalable Next.js server actions combined with micro-cached endpoints to deliver ultra-fast dashboard performance.",
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
-    githubLink: "https://github.com"
+    githubLink: "https://github.com",
+    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-1_v7vogl.webp", 
+    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-2_jqxnrd.webp",
+    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-3_wsovsk.webp",
+    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-4_bgwlu1.webp",
+    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-5_ovnnwt.webp",
+    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781519389/machain-6_zcxdgw.webp",
   },
   "machain-3": {
     title: "Machain 3 - Advanced Figma Architecture",
@@ -72,7 +92,13 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     solutionsBody: "We built an optimized setup with Figma Variables that aligns directly with Tailwind utility layers.",
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
-    githubLink: "https://github.com"
+    githubLink: "https://github.com",
+    protfolio_details_1: "/assets/img/portfoliodetails_1.jpg",
+    protfolio_details_2: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_3: "/assets/img/portfoliodetails_2.jpg",
+   protfolio_details_4: "/assets/img/portfoliodetails_1.jpg",
+    protfolio_details_5: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_6: "/assets/img/portfolio_solution_2.jpg",
   },
   "machain-4": {
     title: "Machain 4 - Scalable Mobile Application",
@@ -90,7 +116,13 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     solutionsBody: "We integrated robust local data models to support instantaneous query parsing features.",
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
-    githubLink: "https://github.com"
+    githubLink: "https://github.com",
+    protfolio_details_1: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_2: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_3: "/assets/img/portfoliodetails_2.jpg",
+   protfolio_details_4: "/assets/img/portfoliodetails_1.jpg",
+    protfolio_details_5: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_6: "/assets/img/portfolio_solution_2.jpg",
   },
   "machain-5": {
     title: "Machain 5 - E-Commerce Platform Design",
@@ -108,7 +140,13 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     solutionsBody: "Deployed performant Next.js dynamic render hooks combined with static segment data distribution layers.",
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
-    githubLink: "https://github.com"
+    githubLink: "https://github.com",
+    protfolio_details_1: "/assets/img/portfolio_solution_2.jpg",
+    protfolio_details_2: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_3: "/assets/img/portfoliodetails_2.jpg",
+   protfolio_details_4: "/assets/img/portfoliodetails_1.jpg",
+    protfolio_details_5: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_6: "/assets/img/portfolio_solution_2.jpg",
   },
   "machain-6": {
     title: "Machain 6 - Creative Studio Product Layout",
@@ -126,6 +164,12 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     solutionsBody: "Utilized fluid proportional spacing rules combined with structured element groups.",
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
-    githubLink: "https://github.com"
+    githubLink: "https://github.com",
+    protfolio_details_1: "/assets/img/portfolio_solution_3.jpg",
+    protfolio_details_2: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_3: "/assets/img/portfoliodetails_2.jpg",
+   protfolio_details_4: "/assets/img/portfoliodetails_1.jpg",
+    protfolio_details_5: "/assets/img/portfolio_solution_1.jpg",
+    protfolio_details_6: "/assets/img/portfolio_solution_2.jpg",
   }
 };

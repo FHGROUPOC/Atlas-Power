@@ -1,7 +1,7 @@
 "use client";
 // src/components/PortfolioDetailsArea.tsx
 import React, { useState } from 'react';
-import Image from 'next/image';
+// import img from 'next/img';
 import Link from 'next/link'; 
 import { ProjectDataType } from '@/data/portfolioData';
 
@@ -147,11 +147,10 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
         <div className="container">
           <div className="cs_portfolio_details">
             <div className="reveal">
-              <Image 
-                src={protfolio_details_1} 
+              <img 
+                src={project.protfolio_details_1} 
                 alt="protfolio_details_1" 
-                width={1200} 
-                height={600} 
+              
                 style={{ width: '100%', height: '100%' }}
               />
             </div>
@@ -196,7 +195,7 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
                           value={dateFrom}
                           onChange={(e) => setDateFrom(e.target.value)}
                           className="bg-transparent border-0 w-100 text-black outline-none date-from-input"
-                          style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}
+                          style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500',outline: 'none' }}
                         />
                       </div>
                     </div>
@@ -212,7 +211,7 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
                           value={dateTo}
                           onChange={(e) => setDateTo(e.target.value)}
                           className="bg-transparent border-0 w-100 text-black outline-none date-to-input"
-                          style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}
+                          style={{ cursor: 'pointer', fontSize: '14px', fontWeight: '500',outline: 'none' }}
                         />
                       </div>
                     </div>
@@ -298,10 +297,10 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
       <div className="container">
         <div className="d-flex gap-2 gap-md-5">
           <div className="reveal">
-            <Image src={protfolio_details_2} alt="portfoliodetails_2" />
+            <img src={project.protfolio_details_2} style={{width:"983px", height:"405px"}} alt="portfoliodetails_2" />
           </div>
           <div className="reveal">
-            <Image src={protfolio_details_3} alt="portfoliodetails_1" />
+            <img src={project.protfolio_details_3} style={{width:"307px", height:"405px"}}  alt="portfoliodetails_1" />
           </div>
         </div>
       </div> 
@@ -322,13 +321,13 @@ const PortfolioDetailsArea: React.FC<PortfolioDetailsAreaProps> = ({ project }) 
                 </div>
                 <div className="cs_solutions_section_img_show">
                   <div className="portfolio_solution_1 reveal">
-                    <Image src={protfolio_details_4} alt="portfolio_solution_1" />
+                    <img src={project.protfolio_details_4} alt="portfolio_solution_1" />
                   </div>
                   <div className="portfolio_solution_2 reveal">
-                    <Image src={protfolio_details_5} alt="portfolio_solution_2" />
+                    <img src={project.protfolio_details_5} alt="portfolio_solution_2" />
                   </div>
                   <div className="portfolio_solution_3 reveal">
-                    <Image src={protfolio_details_6} alt="portfolio_solution_3" />
+                    <img src={project.protfolio_details_6} alt="portfolio_solution_3" />
                   </div>
                 </div>
                 <div className="cs_img_footer_title cs_color_1 anim_text_upanddowns">

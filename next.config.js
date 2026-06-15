@@ -11,6 +11,11 @@ const nextConfig = {
         protocol: 'http',
         hostname: '**', // This wildcard allows images from ANY unsecure website
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
+      },
     ],
   },
   
