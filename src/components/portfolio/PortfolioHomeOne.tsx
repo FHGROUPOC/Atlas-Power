@@ -50,12 +50,12 @@ const portfolio_slider: DataType[] = [
     category: `Digital Services / Web Design`,
     slug: "machain-5",
   },
-  {
-    img: "https://i.pinimg.com/1200x/6f/3f/72/6f3f7291811ab2ea9e542a12eddea498.jpg",
-    title: `Machain 6`,
-    category: `Digital Services / Figma Design`,
-    slug: "machain-6",
-  },
+  // {
+  //   img: "https://i.pinimg.com/1200x/6f/3f/72/6f3f7291811ab2ea9e542a12eddea498.jpg",
+  //   title: `Machain 6`,
+  //   category: `Digital Services / Figma Design`,
+  //   slug: "machain-6",
+  // },
 ]
 
 const PortfolioHomeOne = () => {
