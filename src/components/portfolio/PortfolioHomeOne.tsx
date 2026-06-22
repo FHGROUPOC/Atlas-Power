@@ -6,7 +6,8 @@ import Image, { StaticImageData } from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Swiper core styles
-import 'swiper/css'; 
+// @ts-ignore: No type declarations for CSS side-effect import
+import 'swiper/css';
 
 import portfolio_img_1 from '@/assets/img/portfolio_1.jpg';
 import portfolio_img_2 from '@/assets/img/portfolio_2.jpg';
@@ -62,7 +63,7 @@ const PortfolioHomeOne = () => {
   return (
     <>
       {/* ─── CSS UPDATED FOR TEXT VISIBILITY ─── */}
-      <style global>{`
+      <style jsx global>{`
         .cs_horizontal_scrolls .swiper-slide {
           filter: grayscale(100%);
           opacity: 0.5;

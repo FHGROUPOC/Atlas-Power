@@ -24,18 +24,17 @@ export async function POST(request: Request) {
 
     // 2. Email Content Setup
     const mailOptions = {
-      from: `"Vixan Agency Portfolio" <${process.env.GMAIL_USER}>`,
+      from: `"Atlas Power" <${process.env.GMAIL_USER}>`,
       to: process.env.EMAIL_RECEIVER || process.env.GMAIL_USER, // Fallback to sender if receiver not provided
-      subject: `New Project Details Logged: ${projectTitle}`,
+      subject: `${projectTitle}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #111; color: #fff; border-radius: 8px; border: 1px solid #222;">
           <h2 style="color: #ff6b00; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0;">Project Details Submission</h2>
           <p style="margin: 10px 0;"><strong style="color: #ccc;">Project Name:</strong> ${projectTitle}</p>
-          <p style="margin: 10px 0;"><strong style="color: #ccc;">Duration Range:</strong> ${dateFrom} to ${dateTo}</p>
+          <p style="margin: 10px 0;font-weight:600;"><strong style="color: #ccc;">Duration Range:</strong> ${dateFrom} to ${dateTo}</p>
           <p style="margin: 10px 0;"><strong style="color: #ccc;">Quantity:</strong> ${quantity}</p>
-          <p style="margin: 10px 0;"><strong style="color: #ccc;">Proposed Price / Valuation:</strong> ${price || 'Not Specified'}</p>
           <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;" />
-          <p style="font-size: 12px; color: #666; margin: 0;">Submitted via Vixan Digital Agency Platform.</p>
+          <p style="font-size: 12px; color: #666; margin: 0;">Submitted via Atlas Power</p>
         </div>
       `,
     };
