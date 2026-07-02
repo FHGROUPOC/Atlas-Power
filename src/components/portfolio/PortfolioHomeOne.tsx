@@ -1,17 +1,17 @@
-'use client'
-import React from 'react';
-import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+"use client";
+import React from "react";
+import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Swiper core styles
 // @ts-ignore: No type declarations for CSS side-effect import
-import 'swiper/css';
+import "swiper/css";
 
-import portfolio_img_1 from '@/assets/img/portfolio_1.jpg';
-import portfolio_img_2 from '@/assets/img/portfolio_2.jpg';
-import portfolio_img_3 from '@/assets/img/portfolio_3.jpg';
+import portfolio_img_1 from "@/assets/img/portfolio_1.jpg";
+import portfolio_img_2 from "@/assets/img/portfolio_2.jpg";
+import portfolio_img_3 from "@/assets/img/portfolio_3.jpg";
 
 interface DataType {
   img: StaticImageData | string;
@@ -29,9 +29,9 @@ const portfolio_slider: DataType[] = [
   },
   {
     img: "https://i.pinimg.com/736x/1f/5b/fd/1f5bfdff00934f16ca4a2baf456ebf7f.jpg",
-    title: `Machain 2`,
+    title: `Excavators`,
     category: `Digital Services / Web Design`,
-    slug: "machain-2",
+    slug: "excavators", // <--- Unique dynamic address link token
   },
   {
     img: "https://i.pinimg.com/736x/c8/71/48/c8714891d7149a3618eb513a48b2cba4.jpg",
@@ -57,7 +57,7 @@ const portfolio_slider: DataType[] = [
   //   category: `Digital Services / Figma Design`,
   //   slug: "machain-6",
   // },
-]
+];
 
 const PortfolioHomeOne = () => {
   return (
@@ -85,6 +85,13 @@ const PortfolioHomeOne = () => {
           visibility: visible;
           bottom: 0px;
         }
+  .cs_portfolio.cs_style_1:hover .cs_portfolio_title,
+  .cs_portfolio.cs_style_1:active .cs_portfolio_title,
+  .cs_portfolio.cs_style_1:focus .cs_portfolio_title {
+    color: #ff6b00 !important;
+    transform: translateY(-2px); 
+    transition: color 0.3s ease, transform 0.3s ease;
+      }
       `}</style>
 
       <div className="cs_horizontal_scroll_wrap">
@@ -102,43 +109,49 @@ const PortfolioHomeOne = () => {
           </div>
           <div className="cs_height_100 cs_height_lg_60"></div>
         </div>
-        
+
         <Swiper
           loop={true}
           speed={1000}
-          slidesPerView="auto" 
-          initialSlide={2}      // <--- Page load hote hi 3rd slide active hogi
-          centeredSlides={true}  // <--- Active slide center mein rahegi
+          slidesPerView="auto"
+          initialSlide={2} // <--- Page load hote hi 3rd slide active hogi
+          centeredSlides={true} // <--- Active slide center mein rahegi
           pagination={{
             el: ".cs_pagination",
             clickable: true,
           }}
-          className="cs_horizontal_scrolls anim_div_ShowDowns">
-          {portfolio_slider.map((item, i) =>
+          className="cs_horizontal_scrolls anim_div_ShowDowns"
+        >
+          {portfolio_slider.map((item, i) => (
             <SwiperSlide key={i} className="swiper-slide">
               <div className="cs_horizontal_scroll">
                 {/* ─── DYNAMIC LINK ASSIGNED HERE ─── */}
-                <Link href={`/portfolio-details/${item.slug}`} className="cs_portfolio cs_style_1">
+                <Link
+                  href={`/portfolio-details/${item.slug}`}
+                  className="cs_portfolio cs_style_1"
+                >
                   <div className="cs_portfolio_img">
                     <img
-                      src={typeof item.img === 'string' ? item.img : item.img.src}
+                      src={
+                        typeof item.img === "string" ? item.img : item.img.src
+                      }
                       alt="Thumb"
-                      style={{ width: "100%", height: "570px", objectFit: "cover" }}
+                      style={{
+                        width: "100%",
+                        height: "570px",
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
                   <div className="cs_portfolio_overlay"></div>
                   <div className="cs_portfolio_info">
-                    <h2 className="cs_portfolio_title">
-                      {item.title}
-                    </h2>
-                    <div className="cs_portfolio_subtitle">
-                      {item.category}
-                    </div>
+                    <h2 className="cs_portfolio_title">{item.title}</h2>
+                    <div className="cs_portfolio_subtitle">{item.category}</div>
                   </div>
                 </Link>
               </div>
             </SwiperSlide>
-          )} 
+          ))}
         </Swiper>
       </div>
       <div className="cs_height_145 cs_height_lg_60"></div>
