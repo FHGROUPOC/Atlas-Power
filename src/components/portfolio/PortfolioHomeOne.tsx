@@ -35,15 +35,15 @@ const portfolio_slider: DataType[] = [
   },
   {
     img: "https://i.pinimg.com/736x/c8/71/48/c8714891d7149a3618eb513a48b2cba4.jpg",
-    title: `Machain 3`,
+    title: `Wheel Loader`,
     category: `Digital Services / Figma Design`,
-    slug: "machain-3",
+    slug: "wheel-loader",
   },
   {
     img: "https://i.pinimg.com/736x/ed/6e/a4/ed6ea415a66602d2077ad4ad07057802.jpg",
-    title: `Machain 4`,
+    title: `Compactors`,
     category: `Digital Services / App Design`,
-    slug: "machain-4",
+    slug: "compactors",
   },
   {
     img: "https://i.pinimg.com/736x/e5/91/5d/e5915d2d3ac3fe88d6757466f0a1b631.jpg",

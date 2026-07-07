@@ -76,8 +76,8 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1782730440/machine_2_5_tmjo7r.jpg",
     protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1782739501/machine_2_6_boncr4.jpg",
   },
-  "machain-3": {
-    title: "Machain 3 - Advanced Figma Architecture",
+  "wheel-loader": {
+    title: "Wheel Loader",
     category: "Digital Services / Figma Design",
     client: "Design Studio Intl \n UK",
     services: "UI Design, Prototyping, Design System",
@@ -93,14 +93,14 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
     githubLink: "https://github.com",
-    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781599937/machain-1_3_aln4ty.webp",
-    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781599937/machain-2_3_cc5tfa.webp",
-    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781599938/machain-3_3_micd7v.webp",
-    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781599937/machain-4_3_tgsfwa.webp",
-    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781599938/machain-5_3_twxgsj.webp",
-    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781599937/machain-6_3_ihovkj.webp",
+    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783429752/machine-1_aljlzz.webp",
+    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783429752/machine-2_j5pohr.webp",
+    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783429752/machine-3_kntfh7.webp",
+    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783429752/machine-4_jl5vjr.webp",
+    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783429752/machine-5_jqzjbx.webp",
+    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783429752/machine-6_csrj80.webp",
   },
-  "machain-4": {
+  "compactors": {
     title: "Machain 4 - Scalable Mobile Application",
     category: "Digital Services / App Design",
     client: "TechVibe Global",

@@ -12,19 +12,19 @@ interface DataType {
 
 const about_slider: DataType[] = [
   {
-    img: "/assets/img/about_img.jpg",
+    img: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783334729/about_img_mhh9gm.webp",
     sub_title: "Our Mission",
     title: `Unleashing Creativity to Transform Your Business`,
     des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
   },
   {
-    img: "/assets/img/about_img.jpg",
+    img: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783335201/about_img_2_vamml8.webp",
     sub_title: "Our Mission",
     title: `Unleashing Creativity to Transform Your Business`,
     des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,
   },
   {
-    img: "/assets/img/about_img.jpg",
+    img: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783335201/about_img_3_ofrqvd.webp",
     sub_title: "Our Mission",
     title: `Unleashing Creativity to Transform Your Business`,
     des: `Welcome to our digital agency! We specialize in helping businesses like yours succeed online. From website design and development to digital marketing and advertising, we have the tools and expertise to elevate your online presence. Let us help you lione evolving world of digital.`,

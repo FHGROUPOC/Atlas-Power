@@ -38,6 +38,7 @@
             .cs_about_text {
                 left: 0;
                 opacity: 1;
+                background: linear-gradient(to right, var(--drak-color) 50%, color-mix(in srgb, var(--drak-color) 0%, transparent) 100%)!important;
             }
         }
     }
