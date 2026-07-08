@@ -12,35 +12,35 @@ const galleryData = {
       title: "Cozy Living Room",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
-      image: "https://architronix-nextjs.vercel.app/_next/static/media/gallery-1.db87de5d.jpg"
+      image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506579/Portfolio-1_e01p8h.webp"
     },
     {
       id: "02",
       title: "Luxurious Living Room",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
-      image: "https://architronix-nextjs.vercel.app/_next/static/media/gallery-2.51858c6d.jpg"
+      image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-2_b8xam7.webp"
     },
     {
       id: "03",
       title: "Elegant Bedroom",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
-      image: "https://architronix-nextjs.vercel.app/_next/static/media/gallery-3.a9eaa432.jpg"
+      image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-3_upbplx.webp"
     },
     {
       id: "04",
       title: "Rustic Comfort",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
-      image: "https://architronix-nextjs.vercel.app/_next/static/media/gallery-4.63baaf04.jpg"
+      image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-4_idkvq7.webp"
     },
     {
       id: "05",
       title: "Urban Living Space",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
-      image: "https://architronix-nextjs.vercel.app/_next/static/media/gallery-5.6b73ed1c.jpg"
+      image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-5_upc2hi.webp"
     }
   ]
 };
