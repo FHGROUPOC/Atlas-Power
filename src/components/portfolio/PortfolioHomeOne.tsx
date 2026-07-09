@@ -23,9 +23,9 @@ interface DataType {
 const portfolio_slider: DataType[] = [
   {
     img: "https://i.pinimg.com/736x/2d/a9/4c/2da94c0d6dd951e381f544d888eeecc3.jpg",
-    title: `Machain 1`,
+    title: `Dozers`,
     category: `Digital Services / App Design`,
-    slug: "machain-1", // <--- Unique dynamic address link token
+    slug: "dozers", // <--- Unique dynamic address link token
   },
   {
     img: "https://i.pinimg.com/736x/1f/5b/fd/1f5bfdff00934f16ca4a2baf456ebf7f.jpg",
@@ -46,10 +46,10 @@ const portfolio_slider: DataType[] = [
     slug: "compactors",
   },
   {
-    img: "https://i.pinimg.com/736x/e5/91/5d/e5915d2d3ac3fe88d6757466f0a1b631.jpg",
-    title: `Machain 5`,
+    img: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783596225/main-5_af5tkt.webp",
+    title: `Backhoe Loader`,
     category: `Digital Services / Web Design`,
-    slug: "machain-5",
+    slug: "backhoe-loader",
   },
   // {
   //   img: "https://i.pinimg.com/1200x/6f/3f/72/6f3f7291811ab2ea9e542a12eddea498.jpg",

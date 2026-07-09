@@ -24,8 +24,8 @@ export interface ProjectDataType {
 }
 
 export const portfolioDatabase: Record<string, ProjectDataType> = {
-  "machain-1": {
-    title: "Machain 1 - Custom Industrial Automation App",
+  "dozers": {
+    title: "Dozers",
     category: "Digital Services / App Design",
     client: "Atlas Power Inc \n Lahore, Pakistan",
     services: "UX Research, Wireframing, UI Design",
@@ -44,12 +44,12 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     dribbbleLink: "https://dribbble.com",
     githubLink: "https://github.com",
     // Images strings stored inside JSON structures
-    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781528563/machain-1_2_qtlf6l.webp", 
-    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781528563/machain-2_2_cfknr3.webp",
-    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781528563/machain-3_2_m6zdvt.webp",
-    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781528563/machain-4_2_ouq4xa.webp",
-    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781528563/machain-5_2_sjyhnv.webp",
-    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781528563/machain-6_2_eqmkzi.webp",
+    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783589919/machine-1_ol9v8e.webp", 
+    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783589919/machine-2_tydvll.webp",
+    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783589919/machine-3_qo8mev.webp",
+    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783589919/machine-4_x7lmvh.webp",
+    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783589919/machine-5_trwebi.webp",
+    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783589919/machine-6_o0qfsa.webp",
   },
   "excavators": {
     title: "Excavators",
@@ -124,8 +124,8 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1782902860/machain-4_5_teqjmv.webp",
     protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1782987384/machain-4_6_uueail.webp",
   },
-  "machain-5": {
-    title: "Machain 5 - E-Commerce Platform Design",
+  "backhoe-loader": {
+    title: "Backhoe Loader",
     category: "Digital Services / Web Design",
     client: "Lesoie International",
     services: "E-Commerce Strategy, UX Optimization",
@@ -141,12 +141,12 @@ export const portfolioDatabase: Record<string, ProjectDataType> = {
     behanceLink: "https://behance.com",
     dribbbleLink: "https://dribbble.com",
     githubLink: "https://github.com",
-    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781604373/machain-1_5_pg7t77.webp",
-    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781604373/machain-2_5_sdunib.webp",
-    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781604373/machain-3_5_lt1vdr.webp",
-    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781604373/machain-4_5_aeisca.webp",
-    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781604374/machain-5_5_pjr3c1.webp",
-    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1781604373/machain-6_5_srm8j1.webp",
+    protfolio_details_1: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783595916/machine-1_vdaclz.webp",
+    protfolio_details_2: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783595916/machine-2_dnnjln.webp",
+    protfolio_details_3: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783595916/machine-3_mooxgp.webp",
+    protfolio_details_4: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783595918/machine-4_n3qysx.webp",
+    protfolio_details_5: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783595917/machine-5_jj2j4f.webp",
+    protfolio_details_6: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783595917/machine-6_vyitvt.webp",
   },
   // "machain-6": {
   //   title: "Machain 6 - Creative Studio Product Layout",

@@ -9,35 +9,35 @@ const galleryData = {
   projects: [
     {
       id: "01",
-      title: "Cozy Living Room",
+      title: "Skid Steers",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
       image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506579/Portfolio-1_e01p8h.webp"
     },
     {
       id: "02",
-      title: "Luxurious Living Room",
+      title: "Excavators",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
       image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-2_b8xam7.webp"
     },
     {
       id: "03",
-      title: "Elegant Bedroom",
+      title: "Compactors",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
       image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-3_upbplx.webp"
     },
     {
       id: "04",
-      title: "Rustic Comfort",
+      title: "Cranes",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
       image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-4_idkvq7.webp"
     },
     {
       id: "05",
-      title: "Urban Living Space",
+      title: "Dozers",
       description: "Exploring Excellence in Every Meticulous Design Detail Exploring Excellence in Every Meticulous Design Detail",
       link: "/project-single",
       image: "https://res.cloudinary.com/dgtk4rthy/image/upload/v1783506578/Portfolio-5_upc2hi.webp"
